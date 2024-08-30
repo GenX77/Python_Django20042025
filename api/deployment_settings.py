@@ -7,7 +7,7 @@ ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 DEBUG = True
-SECRET_KEY = None
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -63,7 +63,7 @@ LOGGING = {
 
 
 
-ADMINS = [("CBI Analytics", "nickmol96@hotmail.com")]
+ADMINS = [("CBI Analytics", "YOUREMAIL@EMAIL.com")]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
