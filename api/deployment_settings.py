@@ -63,7 +63,7 @@ LOGGING = {
 
 
 
-ADMINS = [("CBI Analytics", "YOURMAIL.com")]
+ADMINS = [("CBI Analytics", "nickmol96@hotmail.com")]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
