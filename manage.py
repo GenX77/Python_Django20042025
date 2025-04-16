@@ -5,8 +5,8 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    # Obtener la ruta del directorio actual (donde está manage.py)
-    path = os.path.dirname(os.path.abspath(__file__))
+    # Obtener la ruta del directorio padre del directorio actual (donde está manage.py)
+    path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # Añadir el directorio padre al path de Python
     sys.path.insert(0, path)
 
