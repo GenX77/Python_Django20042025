@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def hola_mundo(request):
-    return HttpResponse("<h1>Hola Mundo!!!!</h1>")
+    return render(request, 'hola.html')
