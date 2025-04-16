@@ -5,11 +5,6 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    # Obtener la ruta del directorio actual (donde está manage.py)
-    path = os.path.dirname(os.path.abspath(__file__))
-    # Añadir el directorio padre al path de Python
-    sys.path.insert(0, path)
-
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mycalendar.settings')
     try:
         from django.core.management import execute_from_command_line
