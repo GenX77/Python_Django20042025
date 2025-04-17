@@ -148,7 +148,7 @@
     <div class="container-fluid hero">
         <div class="hero-content">
             <h1 class="display-1 fw-bold">¡Hola Mundo!</h1>
-            <p class="lead fs-3">Bienvenido a mi portafolio profesional. Aquí encontrarás mis proyectos y aplicaciones.</p>
+            <p class="lead fs-3">Bienvenido a mis aplicaciones en Python con Django. Con fines unicamente educativos.</p>
             <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-eye me-2"></i> Ver Portafolio</a>
         </div>
     </div>
@@ -156,7 +156,7 @@
     <section id="portfolio" class="portfolio-section">
         <div class="container">
             <h2>Mis aplicaciones</h2>
-            <p class="lead text-center">Página web con fines educativos.</p>
+            <p class="lead text-center">Mis aplicaciones de prueba.</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <h3>Aplicación Django 1</h3>
