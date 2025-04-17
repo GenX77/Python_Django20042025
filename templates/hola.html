@@ -64,13 +64,7 @@
 
         .lead {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .visit-counter {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem; /* Aumentar el margen inferior */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
@@ -153,14 +147,8 @@
 
     <div class="container-fluid hero">
         <div class="hero-content">
-            <h1 class="display-1 fw-bold"><?php echo $saludo; ?></h1>
-            <?php if ($pais !== 'desconocido'): ?>
-                <p class="lead fs-3">Bienvenido desde <?php echo $pais; ?>.</p>
-            <?php else: ?>
-                <p class="lead fs-3">Bienvenido.</p>
-            <?php endif; ?>
-            <p class="visit-counter"><i class="bi bi-eye me-2"></i> Esta página ha sido visitada <?php echo $visitas; ?> veces.</p>
-            <p class="lead fs-3">Proyectos y aplicaciones con fines educativos.</p>
+            <h1 class="display-1 fw-bold">¡Hola Mundo!</h1>
+            <p class="lead fs-3">Bienvenido a mi primera web en Python con Django . Proyectos y aplicaciones con fines educativos.</p>
             <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-eye me-2"></i> Aplicaciones</a>
         </div>
     </div>
