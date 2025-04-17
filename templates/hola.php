@@ -149,7 +149,6 @@
         <div class="hero-content">
             <h1 class="display-1 fw-bold">¡Hola Mundo!</h1>
             <p class="lead fs-3">Bienvenido a mis aplicaciones en Python con Django. Con fines unicamente educativos.</p>
-            <p class="visit-counter"><i class="bi bi-eye me-2"></i> Esta página ha sido visitada varias veces.</p>
             <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-eye me-2"></i> Ver Portafolio</a>
         </div>
     </div>
