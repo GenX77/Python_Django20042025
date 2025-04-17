@@ -1,3 +1,47 @@
+<?php
+    // Contador de visitas
+    $archivo_visitas = 'visitas.txt';
+
+    // Leer el número actual de visitas
+    $visitas = 0;
+    if (file_exists($archivo_visitas)) {
+        $visitas = (int) file_get_contents($archivo_visitas);
+    }
+
+    // Incrementar el contador
+    $visitas++;
+
+    // Guardar el nuevo número de visitas
+    file_put_contents($archivo_visitas, $visitas);
+
+    // Saludo según la hora
+    $hora = date('H');
+    $saludo = '';
+    if ($hora >= 5 && $hora < 12) {
+        $saludo = 'Buenos días';
+    } elseif ($hora >= 12 && $hora < 20) {
+        $saludo = 'Buenas tardes';
+    } else {
+        $saludo = 'Buenas noches';
+    }
+
+    // Obtener la ubicación del visitante (requiere una API externa)
+    $pais = 'desconocido';
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    // Utilizar una API para obtener la ubicación basada en la IP
+    // Hay varias APIs gratuitas y de pago disponibles.
+    // Ejemplo utilizando ip-api.com (puede tener limitaciones de uso):
+    $api_url = "http://ip-api.com/json/{$ip}";
+    $response = @file_get_contents($api_url);
+    if ($response) {
+        $data = json_decode($response, true);
+        if ($data && $data['status'] == 'success') {
+            $pais = $data['country'];
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -64,7 +108,13 @@
 
         .lead {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .visit-counter {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
@@ -147,8 +197,14 @@
 
     <div class="container-fluid hero">
         <div class="hero-content">
-            <h1 class="display-1 fw-bold">¡Hola Mundo!</h1>
-            <p class="lead fs-3">Bienvenido a mi primera web en Python con Django . Proyectos y aplicaciones con fines educativos.</p>
+            <h1 class="display-1 fw-bold"><?php echo $saludo; ?></h1>
+            <?php if ($pais !== 'desconocido'): ?>
+                <p class="lead fs-3">Bienvenido desde <?php echo $pais; ?>.</p>
+            <?php else: ?>
+                <p class="lead fs-3">Bienvenido.</p>
+            <?php endif; ?>
+            <p class="visit-counter"><i class="bi bi-eye me-2"></i> Esta página ha sido visitada <?php echo $visitas; ?> veces.</p>
+            <p class="lead fs-3">Proyectos y aplicaciones con fines educativos.</p>
             <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-eye me-2"></i> Aplicaciones</a>
         </div>
     </div>
