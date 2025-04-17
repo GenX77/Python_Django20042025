@@ -7,7 +7,113 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <style>
-        /* ... tus estilos CSS ... */
+        body {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            margin: 0;
+            padding-top: 56px; /* Espacio para la barra de navegación fija */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #f8f9fa !important;
+        }
+
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+
+        /* Sección Hero */
+        .hero {
+            height: calc(100vh - 56px); /* Ajustar altura restando la barra de navegación */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .display-1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .lead {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Otras secciones (puedes agregar más estilos aquí) */
+        .portfolio-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item p {
+            font-size: 0.9rem;
+            color: #eee;
+        }
+
+        /* Estilos para dispositivos más pequeños */
+        @media (max-width: 768px) {
+            .display-1 {
+                font-size: 2.5rem;
+            }
+            .lead {
+                font-size: 1.2rem;
+            }
+            .hero-content {
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
