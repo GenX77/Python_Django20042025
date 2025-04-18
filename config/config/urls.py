@@ -1,7 +1,8 @@
+# config/config/urls.py
 from django.contrib import admin
-from django.urls import path, include  # 👈 importa include
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('saludo.urls')),  # 👈 añade esta línea para enlazar tu app
+    path('', include('gestion_usuarios.urls')),  # Asegúrate de que SOLO tengas esta línea para la raíz
 ]

@@ -1,0 +1,34 @@
+{% extends 'gestion_usuarios/base.html' %}
+
+{% block title %}Lista de Contactos{% endblock %}
+
+{% block content %}
+    <h1>Lista de Contactos</h1>
+    {% if contactos %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Email</th>
+                    <th>Acciones</th>  <!-- Columna para las acciones -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for contacto in contactos %}
+                    <tr>
+                        <td>{{ contacto.nombre }}</td>
+                        <td>{{ contacto.telefono|default:"-" }}</td>
+                        <td>{{ contacto.email|default:"-" }}</td>
+                        <td>
+                            <a href="{% url 'modificar_contacto' contacto.id %}" class="btn btn-warning">Modificar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay contactos guardados.</p>
+    {% endif %}
+    <a href="{% url 'agregar_contacto' %}" class="btn btn-primary">Agregar Nuevo Contacto</a>
+{% endblock %}

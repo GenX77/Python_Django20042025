@@ -1,8 +1,8 @@
+# config/config/urls.py
 from django.contrib import admin
-from django.urls import path
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.hola_mundo, name='hola'),  # Asegúrate de que la raíz esté mapeada a tu vista
+    path('', include('gestion_usuarios.urls')),  # Asegúrate de que SOLO tengas esta línea para la raíz
 ]

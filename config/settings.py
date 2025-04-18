@@ -26,18 +26,21 @@ SECRET_KEY = 'django-insecure-2cq_nqi5sp#8_+8se*h)be-d!2=g8tep4aap6ur^wevyry50#n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['render-deply-tutorial-django-code.onrender.com']
+# ALLOWED_HOSTS = ['render-deply-tutorial-django-code.onrender.com']
+ALLOWED_HOSTS = ['render-deply-tutorial-django-code.onrender.com', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'gestion_usuarios', # Asegúrate de que tu aplicación esté aquí
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 MIDDLEWARE = [
@@ -55,11 +58,10 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Ruta al directorio templates
+        'DIRS': [os.path.join(BASE_DIR, 'gestion_usuarios', 'templates')],  # Añade esta línea
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
