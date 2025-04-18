@@ -11,13 +11,12 @@
             background: linear-gradient(to right, #667eea, #764ba2);
             color: white;
             margin: 0;
-            padding-top: 56px; /* Espacio para la barra de navegación fija */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         /* Barra de navegación */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .navbar-brand {
@@ -40,12 +39,12 @@
 
         /* Sección Hero */
         .hero {
-            height: calc(100vh - 56px); /* Ajustar altura restando la barra de navegación */
+            min-height: 70vh;
+            padding: 6rem 2rem 3rem; /* Espacio para compensar navbar fija */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
         }
 
         .hero-content {
@@ -68,7 +67,6 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
-        /* Otras secciones (puedes agregar más estilos aquí) */
         .portfolio-section {
             padding: 4rem 2rem;
             text-align: center;
@@ -102,7 +100,6 @@
             color: #eee;
         }
 
-        /* Estilos para dispositivos más pequeños */
         @media (max-width: 768px) {
             .display-1 {
                 font-size: 2.5rem;
@@ -173,7 +170,7 @@
                     <p>Proximamente.</p>
                     <a href="#" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
