@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Barra de navegación */
         .navbar {
             background-color: rgba(0, 0, 0, 0.7);
         }
@@ -37,10 +36,9 @@
             background-color: white;
         }
 
-        /* Sección Hero */
         .hero {
             min-height: 70vh;
-            padding: 6rem 2rem 3rem; /* Espacio para compensar navbar fija */
+            padding: 6rem 2rem 3rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -126,16 +124,16 @@
                         <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-door me-1"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-code-square me-1"></i> Aplicación 1</a>
+                        <a class="nav-link" href="{% url 'gestion_usu:index' %}"><i class="bi bi-file-earmark-text me-1"></i> Datos TXT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-laptop me-1"></i> Aplicación 2</a>
+                        <a class="nav-link" href="{% url 'listar_contactos' %}"><i class="bi bi-database me-1"></i> Gestión DB</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="bi bi-phone me-1"></i> Aplicación 3</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-envelope me-1"></i> Contacto</a>
+                        <a class="nav-link" href="mailto:gendersonc@gmail.com"><i class="bi bi-envelope me-1"></i> Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -156,20 +154,19 @@
             <p class="lead text-center">Mis aplicaciones de prueba.</p>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <h3>Aplicación Django 1</h3>
-                    <p>Proximamente.</p>
-                    <!-- Redirección a la vista de listar contactos -->
-                    <a href="{% url 'listar_contactos' %}" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
+                    <h3>Gestión TXT</h3>
+                    <p>Lee y escribe en archivos de texto plano.</p>
+                    <a href="{% url 'gestion_usu:index' %}" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
                 </div>
                 <div class="portfolio-item">
-                    <h3>Aplicación React 2</h3>
-                    <p>Proximamente.</p>
-                    <a href="#" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
+                    <h3>Gestión DB</h3>
+                    <p>Guarda la información de contactos en una base de datos SQLite.</p>
+                    <a href="{% url 'listar_contactos' %}" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
                 </div>
                 <div class="portfolio-item">
                     <h3>Aplicación Móvil 3</h3>
                     <p>Proximamente.</p>
-                    <a href="#" class="btn btn-sm btn-outline-light"><i class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
+                    <p class="btn btn-sm btn-outline-light disabled"><i class="bi bi-link-45deg me-1"></i> Proximamente</p>
                 </div>
             </div>
         </div>
