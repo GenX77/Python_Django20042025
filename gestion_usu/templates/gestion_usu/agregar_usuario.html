@@ -1,0 +1,23 @@
+{% extends 'gestion_usu/base.html' %} {% block title %}Agregar Usuario{% endblock %} {% block content %}
+<h1>Agregar Nuevo Usuario</h1>
+{% if error %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required>
+    </div>
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono:</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+    <a href="{% url 'gestion_usu:index' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
