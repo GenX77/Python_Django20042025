@@ -5,7 +5,7 @@ palabras_prohibidas = [
     'culo', 'pene', 'vagina', 'gilipollas', 'cabrón', 'zorra', 'mierda', 'joder',
     'coño', 'teta', 'polla', 'maricón', 'puta', 'chingar', 'mamón', 'idiota',
     'imbécil', 'estúpido', 'carajo', 'pendejo', 'boludo', 'concha', 'verga',
-    'pendeja', 'zorras', 'cabrones', 'gilipollas', 'maricones', 'putas',
+    'pendeja', 'zorras', 'cabrones', 'gilipollas', 'maricones', 'putas', 'marica',
     'mamon', 'idiotas', 'imbeciles', 'estupidos', 'carajos', 'pendejos',
     'boludos', 'conchas', 'vergas', 'pendejas'
     # Puedes añadir más palabras a esta lista
