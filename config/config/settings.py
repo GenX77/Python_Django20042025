@@ -1,3 +1,4 @@
+# config/settings.py
 """
 Django settings for config project.
 
@@ -46,8 +47,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # Puedes dejar esto vacío o con rutas a plantillas globales
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'gestion_usu', 'templates')],  # Apunta directamente a la carpeta de plantillas de gestion_usu
+        'APP_DIRS': False,  # Desactivamos la búsqueda automática
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
