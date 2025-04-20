@@ -1,4 +1,4 @@
-# config/settings.py
+# config/config/settings.py
 """
 Django settings for config project.
 
@@ -22,7 +22,7 @@ ALLOWED_HOSTS = ['render-deply-tutorial-django-code.onrender.com', '127.0.0.1']
 # Application definition
 INSTALLED_APPS = [
     'gestion_usuarios',  # ✅ Corregido: nombre real de tu app
-    'gestion_usu',       # 👈 ¡Añade esta línea!
+    'gestion_usu',        # 👈 ¡Añade esta línea!
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,8 +47,8 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'gestion_usu', 'templates')],  # Apunta directamente a la carpeta de plantillas de gestion_usu
-        'APP_DIRS': False,  # Desactivamos la búsqueda automática
+        'DIRS': [],  # Dejamos la lista de directorios adicionales vacía
+        'APP_DIRS': True,  # ¡Activamos la búsqueda automática en las carpetas 'templates' de las aplicaciones!
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
