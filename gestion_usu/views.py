@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 import os
+from .forms import UsuarioForm  # Importa el formulario
 
 ARCHIVO_USUARIOS = 'gestion_usu/usuarios.txt'
 SEPARADOR = ':::'
@@ -27,18 +28,22 @@ def index(request):
     return render(request, 'gestion_usu/index.html', {'usuarios': usuarios})
 
 def agregar_usuario(request):
+    # RENDER-DEPLY-TUTORIAL-DJANGO-CODE/gestion_usu/views.py - Vista para agregar usuarios
     if request.method == 'POST':
-        nombre = request.POST['nombre'].strip()
-        telefono = request.POST['telefono'].strip()
-        email = request.POST['email'].strip()
-        if nombre and telefono and email:
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data['nombre'].strip()
+            telefono = form.cleaned_data['telefono'].strip()
+            email = form.cleaned_data['email'].strip()
             usuarios = leer_usuarios()
             usuarios.append({'nombre': nombre, 'telefono': telefono, 'email': email})
             guardar_usuarios(usuarios)
             return redirect(reverse('gestion_usu:index'))
         else:
-            return render(request, 'gestion_usu/agregar_usuario.html', {'error': 'Todos los campos son obligatorios.'})
-    return render(request, 'gestion_usu/agregar_usuario.html')
+            form = form  # Pasa el formulario inválido para mostrar errores
+    else:
+        form = UsuarioForm()
+    return render(request, 'gestion_usu/agregar_usuario.html', {'form': form})
 
 def buscar_usuarios(request):
     termino = request.GET.get('q', '').strip().lower()
@@ -51,22 +56,26 @@ def buscar_usuarios(request):
     return render(request, 'gestion_usu/index.html', {'usuarios': resultados, 'termino_busqueda': termino})
 
 def editar_usuario(request, indice):
+    # RENDER-DEPLY-TUTORIAL-DJANGO-CODE/gestion_usu/views.py - Vista para editar usuarios
     usuarios = leer_usuarios()
     if indice < 0 or indice >= len(usuarios):
         return redirect(reverse('gestion_usu:index'))
-    usuario = usuarios[indice]
+    usuario_data = usuarios[indice]
 
     if request.method == 'POST':
-        nombre = request.POST['nombre'].strip()
-        telefono = request.POST['telefono'].strip()
-        email = request.POST['email'].strip()
-        if nombre and telefono and email:
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data['nombre'].strip()
+            telefono = form.cleaned_data['telefono'].strip()
+            email = form.cleaned_data['email'].strip()
             usuarios[indice] = {'nombre': nombre, 'telefono': telefono, 'email': email}
             guardar_usuarios(usuarios)
             return redirect(reverse('gestion_usu:index'))
         else:
-            return render(request, 'gestion_usu/editar_usuario.html', {'usuario': usuario, 'indice': indice, 'error': 'Todos los campos son obligatorios.'})
-    return render(request, 'gestion_usu/editar_usuario.html', {'usuario': usuario, 'indice': indice})
+            form = form  # Pasa el formulario inválido para mostrar errores
+    else:
+        form = UsuarioForm(initial=usuario_data)
+    return render(request, 'gestion_usu/editar_usuario.html', {'form': form, 'usuario': usuario_data, 'indice': indice})
 
 def borrar_usuario(request, indice):
     usuarios = leer_usuarios()
