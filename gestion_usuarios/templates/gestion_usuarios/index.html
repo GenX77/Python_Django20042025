@@ -133,7 +133,7 @@
                         <a class="nav-link" href="{% url 'gestion_usu:index' %}"><i
                                 class="bi bi-file-earmark-text me-1"></i> Datos TXT</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="display: none;">
                         <a class="nav-link" href="{% url 'listar_contactos' %}"><i class="bi bi-database me-1"></i>
                             Gestión DB</a>
                     </li>
@@ -150,7 +150,7 @@
         <div class="hero-content">
             <h1 class="display-1 fw-bold">¡Hola Mundo!</h1>
             <p class="lead fs-3">Bienvenido a mis aplicaciones en Python con Django. Con fines unicamente educativos.</p>
-            <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-eye me-2"></i> Ver Portafolio</a>
+            <a href="#portfolio" class="btn btn-primary btn-lg"><i class="bi bi-gear-fill me-2"></i> En construcción</a>
         </div>
     </div>
 
@@ -165,13 +165,13 @@
                     <a href="{% url 'gestion_usu:index' %}" class="btn btn-sm btn-outline-light"><i
                             class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" style="display: none;">
                     <h3>Gestión DB</h3>
                     <p>Guarda la información de contactos en una base de datos SQLite.</p>
                     <a href="{% url 'listar_contactos' %}" class="btn btn-sm btn-outline-light"><i
                             class="bi bi-link-45deg me-1"></i> Ver Proyecto</a>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
